@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	--h: 212deg;
+	--l: 43%;
+	--brandColor: hsl(var(--h), 71%, var(--l));
+	font-family: "DM Sans", sans-serif; 
+	margin: 0;
+	background-color: whitesmoke;
+}
+
+p {
+	margin: 0;
+	line-height: 1.6;
+}
+
+ol {
+	list-style: none;
+	counter-reset: list;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	max-width: 90rem;
+	margin: 0 auto;
+}
+
+li {
+	--stop: calc(100% / var(--length) * var(--i));
+	--l: 62%;
+	--l2: 88%;
+	--h: calc((var(--i) - 1) * (180 / var(--length)));
+	--c1: hsl(var(--h), 71%, var(--l));
+	--c2: hsl(var(--h), 71%, var(--l2));
+
+	position: relative;
+	counter-increment: list;
+	margin: 0;
+	padding: 1rem 1rem 0.75rem;
+	box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+	border-radius: 0.85rem;
+	overflow: hidden;
+	background-color: white;
+}
+
+li::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(to right, var(--c1) var(--stop), var(--c2) var(--stop));
+}
+
+h3 {
+	display: flex;
+	align-items: baseline;
+	margin: 0 0 0.5rem;
+	font-size: 1rem;
+	color: rgb(70 70 70);
+}
+
+h3::before {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 auto;
+	margin-right: 0.75rem;
+	width: 2rem;
+	height: 2rem;
+	content: counter(list);
+	padding: 0.5rem;
+	border-radius: 50%;
+	background-color: var(--c1);
+	color: white;
+	font-size: 0.85rem;
+}
+
+@media (min-width: 40em) {
+	ol {
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	li {
+		margin: 0;
+		padding: 1.5rem 1.5rem 1rem;
+	}
+
+	h3 {
+		font-size: 1.85rem;
+		margin: 0 0 0.75rem;
+	}
+
+	h3::before {
+		margin-right: 1rem;
+	}
+}
+
+h1{
+	font-family: 'DM Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 3.0rem;
+}
+
+
+
+  /* From Uiverse.io by adamgiebl */ 
+.cssbuttons-io-button {
+  background: #76b753;
+  color: #191970;
+   font-family: "Open Sans", sans-serif;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #76b753;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #eceff1;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #191970;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+.parallax {
+  background-image: url('/assets/img/p1.png');
+  min-height: 600px;
+     background-attachment: fixed;/* 👈 clave para el efecto */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.contenido {
+  position: relative;
+
+
+  padding: 10px 10px;
+}

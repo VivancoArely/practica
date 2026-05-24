@@ -6,11 +6,12 @@ import { App } from './components/header/app';
 import { Nav } from './components/nav/nav';
 import { Calculadora } from './components/calculadora/calculadora';
 import { Formulario } from './components/formulario/formulario';
+import { Lista } from './components/lista/lista';
 
 @NgModule({
-  declarations: [App, Nav,],
+  declarations: [App, Nav, Lista],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
-  bootstrap: [Nav, App,],
+  bootstrap: [App,],
 })
 export class AppModule {}

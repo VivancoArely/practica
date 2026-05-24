@@ -1,48 +1,40 @@
+<section class="speedyui speedyui-hero blanco" style="position:relative; overflow:hidden;">
+    <div class="container-fluid">
+        <div class="row" style="display:flex; align-items:center; flex-wrap:wrap; padding-top:1rem; padding-bottom:1rem;">
+            <div class="col s12 l6" style="margin:0.5rem 0;">
+                <div class="hero-content">
+                     
+                    <ul class="cat-list" style="list-style:none; display:flex; padding:0; margin-bottom:1rem;">
+                        
+                        <li style="padding-right:0.5rem;"><a href="#" class="brand-logo"><span class="vintage">E</span>co<span class="vintage">C</span>iclo</a></li>
+                        
+                    </ul>
+                    <h1 class="hero-heading" style="margin-bottom:1.5rem;margin-top: -30px; font-weight:700; font-size:3.5rem;">LA NUEVA FORMA DE GESTIONAR TU PERIODO</h1>
+                    <div class="row">
+                        <div class="col s12 m6" style="margin:1rem 0;">
+                            <div class="hero-feature" style="padding:0.5rem 0;">
+                                <h4 style="font-size:1.875rem;font-weight:600; text-transform:uppercase; margin-bottom:0.5rem;">ECOLÓGICO</h4>
+                                <p class="grey-text" style="font-weight:500;">Reduce tu impacto ambiental en cada ciclo</p>
+                            </div>
+                        </div><!--.col-grid-->
+                        <div class="col s12 m6" style="margin:1rem 0;">
+                            <div class="hero-feature" style="padding:0.5rem 0;">
+                                <h4 style="font-size:1.875rem;font-weight:600; text-transform:uppercase; margin-bottom:0.5rem;">CÓMODO</h4>
+                                <p class="grey-text " style="font-weight:500;">Adapta tu ciclo a tu estilo de vida</p>
+                            </div>
+                        </div><!--.col-grid-->
+                    </div><!--.row-->
+                    <a [routerLink]="[ '/calculadora' ]" routerLinkActive="active"class="btn speedyui-btn pink accent-1 waves-effect waves-light" style="text-transform:uppercase; padding:3 1em; border-radius: 20px; font-size:1.5rem; font-weight:600;">COMENZAR</a>
+                </div><!--.hero-content-->
+            </div><!--.col-grid-->
+            <div class="col s12 l6" style="margin:0.5rem 0;">
+                <img src="assets/img/h1.png" class="responsive-img" alt="" />
+            </div><!--.col-grid-->
+        </div><!--.row-->
+    </div><!--.container-->
+    <div class="circle-one hide-on-med-and-down" style="position:absolute;"></div><!--.circle-one-->
+    <div class="circle-two hide-on-med-and-down" style="position:absolute;"></div><!--.circle-two-->
+</section>
+<!--==================== End Hero Section =====================-->
 
-
-<!--div class="navbar-fixed transparent">
-<nav class="transparent">
-    <div class="nav-wrapper transparent">
-        <a href="#" class="brand-logo center">KAYWA</a>
-       <a href="#" #trigger data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="left hide-on-med-and-down transparent">
-            <li><a href="#" class="link">HOME</a></li>
-            <li><a href="#header" class="link">header</a></li>
-            <li><a href="#" class="link">SOCIAL MEDIA</a></li>
-            <li><a href="#" class="link">CONTACT US</a></li>
-        </ul>
-        
-    </div>
-</nav-->
- <div class="navbar-fixed">
-  <nav class="transparent">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-       <a href="#" #trigger data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a  [routerLink]="[ '/formulario' ]" routerLinkActive="active">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </nav>
-  </div>
-<ul #sidenav id="slide-out" class="sidenav" >
-
-  <li>
-    <div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div>
-  </li>
-  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-  <li><a href="#header">Second Link</a></li>
-  <li><div class="divider"></div></li>
- 
-  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-</ul>
-<router-outlet></router-outlet>
+<app-lista></app-lista>
