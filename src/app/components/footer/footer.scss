@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body{
 	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
+	font-family: "DM Sans", sans-serif; 
 }
 *{
 	margin:0;
@@ -20,7 +20,7 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-color: #191970;
+	background-color: #3a533c;
     padding: 70px 0;
 }
 .footer-col{
@@ -40,7 +40,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #f06292;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -92,3 +92,19 @@ ul{
 }
 }
 
+.page-footer{
+	background-color: #253b27;
+}
+
+
+.footer-col p{
+	font-size: 16px;
+	text-transform: uppercase;
+	
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}

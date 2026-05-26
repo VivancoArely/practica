@@ -11,9 +11,12 @@ import { Iecologico } from './components/iecologico/iecologico';
 
 import { Cards } from './components/cards/cards';
 import { Footer } from './components/footer/footer';
+import { Nosotros } from './components/nosotros/nosotros';
+import { Mision } from './components/mision/mision';
+import { Historia } from './components/historia/historia';
 
 @NgModule({
-  declarations: [App, Nav, Lista, Iecologico, Cards, Footer],
+  declarations: [App, Nav, Lista, Iecologico, Cards, Footer, Nosotros, Mision, Historia],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

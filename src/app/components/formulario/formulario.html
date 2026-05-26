@@ -1,106 +1,127 @@
 <section id="contact">
-  
   <h1 class="section-header">Contacto</h1>
-  
+
   <div class="contact-wrapper">
-  
- 
-    
-    <form id="contact-form" class="form-horizontal containerF" role="form" [formGroup]="formulario" (ngSubmit)="guardarDatos()">
-       
-    
-
-       <div class="input-field ">
-        <i class="material-icons prefix cafe">account_circle</i> 
+    <form
+      id="contact-form"
+      class="form-horizontal containerF"
+      role="form"
+      [formGroup]="formulario"
+      (ngSubmit)="guardarDatos()"
+    >
+      <div class="input-field">
+        <i class="material-icons prefix red-text text-lighten-4 cafe">account_circle</i>
         <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre"  formControlName="nombre" maxlength="120" data-length="120"  class="validate"  >
-          <span class="helper-text" data-error="Solo letras permitidas" data-success="Correct"></span>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          formControlName="nombre"
+          maxlength="120"
+          pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ ]+"
+          data-length="120"
+          class="validate"
+        />
+        <span
+          class="helper-text"
+          data-error="Solo letras permitidas"
+          data-success="Correcto"
+        ></span>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix cafe">email</i>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="validate"
+          name="email"
+          formControlName="email"
+          required
+        />
+        <span class="helper-text" data-error="Formato incorrecto" data-success="Correcto"></span>
+      </div>
+      <div class="input-field">
+        <textarea
+          id="textarea1"
+          class="materialize-textarea"
+          formControlName="comentarios"
+        ></textarea>
+        <label for="textarea1">Dejanos un comentario</label>
+      </div>
+
+      <h6>¿ACEPTAS EL AVISO DE PRIVACIDAD?</h6>
+      <div class="switch cafe">
+        <label>
+          NO
+          <input id="avisop" formControlName="avisop" type="checkbox" />
+          <span class="lever"></span>
+          SI
+        </label>
+      </div>
+      <br />
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col s6">
+            <!--input type="submit" id="guardar" value="Guardar" class="btn indigo lighten-3" name="" required-->
+            <button type="submit" class="btn" [disabled]="formulario.invalid">ENVIAR</button>
+          </div>
+          <div class="col s6">
+            <button type="reset" class="btn">Cancelar</button>
+          </div>
         </div>
-  
-               <div class="input-field ">
-        <i class="material-icons prefix cafe">email</i> 
-             <label for="email">Email</label>                       
-             <input id="email" type="email" class="validate" name="email" formControlName="email" required>
-             <span class="helper-text" data-error="Formato incorrecto" data-success="Corecto"></span>
-        </div>
- <div class="input-field ">
-          <textarea id="textarea1" class="materialize-textarea" formControlName="comentarios"></textarea>
-          <label for="textarea1">Textarea</label>
-        </div>
-
-<h6>¿ACEPTA EL AVISO DE PRIVACIDAD?</h6>
-             <div class="switch cafe">
-                <label>
-                  NO 
-                  <input id="avisop" formControlName="avisop" type="checkbox">
-                  <span class="lever"></span>
-                  SI 
-                </label>
-              </div>
-              <br>
-              <div class="container-fluid">
-                <div class="row">
-                    <div class="col s6">
-                         <!--input type="submit" id="guardar" value="Guardar" class="btn indigo lighten-3" name="" required-->
-                         <button type="submit" class="btn black" [disabled]="formulario.invalid"> Guardarr</button>
-                         
-                    </div>
-                    <div class="col s6">
-                        <button type="reset" class="btn black"> Cancelar</button>
-
-                    </div>
-                </div>
-
-              </div>
-         
-          
-
-
- 
-    
-  
-      
+      </div>
     </form>
 
-    
-      <div class="direct-contact-container containerD">
+    <div class="direct-contact-container containerD">
+      <ul class="contact-list">
+        <li class="list-item">
+          <i class="fa-solid fa-phone fa-xl" ></i>
+          <span class="contact-text place">(55) 44 96 25 67</span>
+        </li>
+        <li class="list-item">
+          <i class="fa-solid fa-phone" ></i
+          ><span class="contact-text phone"
+            ><a href="tel:1-212-555-5555" title="Give me a call">(55) 22356083</a></span
+          >
+        </li>
 
-        <ul class="contact-list">
-           
-            
-          <li>
-  <i class="fa-solid fa-phone" style="color: rgb(77, 112, 80);"></i>
-  <span class="contact-text place">City, State</span>
-</li>
-          <li class="list-item"><i class="fa-solid fa-phone" style="color: rgb(77, 112, 80);"></i><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></li>
-            
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">hitmeup@gmail.com</a></span></i></li>
-          
-        </ul>
+        <li class="list-item">
+          <i class="fa fa-envelope fa-2x"
+            ><span class="contact-text gmail"
+              ><a href="mailto:#" title="Send me an email">ecociclo@gmail.com</a></span
+            ></i
+          >
+        </li>
+      </ul>
 
-        <hr>
-        <ul class="social-media-list">
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-codepen" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-twitter" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i></a>
-          </li>       
-        </ul>
-        <hr>
+      <hr />
+      <ul class="social-media-list">
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-github" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-codepen" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-twitter" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-instagram" aria-hidden="true"></i
+          ></a>
+        </li>
+      </ul>
+      <hr />
 
-        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
-
-      </div>
-    
+      <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+    </div>
   </div>
-  
-</section>  
-  
-  
+</section>
