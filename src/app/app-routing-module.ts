@@ -4,14 +4,15 @@ import { App } from './components/header/app';
 import{  Formulario} from './components/formulario/formulario'
 import { Nav } from './components/nav/nav';
 import {Calculadora} from './components/calculadora/calculadora';
-
+import { Iecologico } from './components/iecologico/iecologico';
 
 
 const routes: Routes = [
    { path: '', redirectTo: '/inicio', pathMatch: 'full' },
    { path: 'inicio', component: Nav },
    {path: 'formulario',component:Formulario},
-   {path: 'calculadora', component: Calculadora}
+   {path: 'calculadora', component: Calculadora},
+   {path: 'iecologico', component: Iecologico}
 
 ];
 

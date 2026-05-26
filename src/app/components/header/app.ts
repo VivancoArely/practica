@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class App implements AfterViewInit {
   @ViewChild('sliderWrapper', { static: true }) sliderWrapper!: ElementRef;
 
   ngAfterViewInit(): void {
+
+$(".dropdown-trigger").dropdown();
     let burger = document.getElementById("burger");
 
 let heroImage = document.querySelector(".hero-image");

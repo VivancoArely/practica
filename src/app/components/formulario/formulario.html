@@ -1,6 +1,6 @@
 <section id="contact">
   
-  <h1 class="section-header">Contact</h1>
+  <h1 class="section-header">Contacto</h1>
   
   <div class="contact-wrapper">
   
@@ -13,15 +13,15 @@
        <div class="input-field ">
         <i class="material-icons prefix cafe">account_circle</i> 
         <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" formControlName="nombre" maxlength="120" data-length="120"  class="validate"  >
-          <span class="helper-text" data-error="wrong" data-success="right"></span>
+          <input type="text" id="nombre" name="nombre"  formControlName="nombre" maxlength="120" data-length="120"  class="validate"  >
+          <span class="helper-text" data-error="Solo letras permitidas" data-success="Correct"></span>
         </div>
   
                <div class="input-field ">
         <i class="material-icons prefix cafe">email</i> 
              <label for="email">Email</label>                       
              <input id="email" type="email" class="validate" name="email" formControlName="email" required>
-             <span class="helper-text" data-error="wrong" data-success="right"></span>
+             <span class="helper-text" data-error="Formato incorrecto" data-success="Corecto"></span>
         </div>
  <div class="input-field ">
           <textarea id="textarea1" class="materialize-textarea" formControlName="comentarios"></textarea>

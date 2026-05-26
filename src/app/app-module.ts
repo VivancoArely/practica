@@ -7,11 +7,15 @@ import { Nav } from './components/nav/nav';
 import { Calculadora } from './components/calculadora/calculadora';
 import { Formulario } from './components/formulario/formulario';
 import { Lista } from './components/lista/lista';
+import { Iecologico } from './components/iecologico/iecologico';
+
+import { Cards } from './components/cards/cards';
+import { Footer } from './components/footer/footer';
 
 @NgModule({
-  declarations: [App, Nav, Lista],
+  declarations: [App, Nav, Lista, Iecologico, Cards, Footer],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
-  bootstrap: [App,],
+  bootstrap: [App],
 })
 export class AppModule {}
