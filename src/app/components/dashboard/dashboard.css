@@ -212,3 +212,18 @@
   .analytics-row  { grid-template-columns: 1fr; }
   .planner-grid   { grid-template-columns: repeat(4, 1fr); }
 }
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: .3px;
+  transition: background .15s;
+}
+
+.btn-submit:hover:not(:disabled) { background: var(--primary-dark); }

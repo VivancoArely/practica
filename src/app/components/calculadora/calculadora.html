@@ -1,4 +1,4 @@
-<h1>EcoCiclo</h1>
+<h1 style="text-transform: uppercase; font-weight: 500; ">Planifica tu ciclo con conciencia sostenible</h1>
 
 <div class="app-card">
 
@@ -47,13 +47,15 @@
       CALCULAR MI CICLO
     </button>
   </div>
+ 
 
   <!-- DASHBOARD -->
   <app-dashboard
     *ngIf="showDashboard && results"
     [results]="results"
     [diaSelected]="diaSelected!"
-    [duracionCiclo]="duracionCiclo">
+    [duracionCiclo]="duracionCiclo"
+    (limpiar)="onLimpiar()">
   </app-dashboard>
  
 

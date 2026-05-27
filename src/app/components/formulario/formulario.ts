@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../../../firebaseConfig';
 import { Footer } from '../footer/footer';
-
+declare var $: any
 
 @Component({
   selector: 'app-formulario',
@@ -13,7 +13,7 @@ import { Footer } from '../footer/footer';
   templateUrl: './formulario.html',
   styleUrl: './formulario.scss',
 })
-export class Formulario {
+export class Formulario implements AfterViewInit {
   formulario: FormGroup;
 
   // Inyectamos el FormBuilder para armar el formulario más fácil
@@ -27,6 +27,9 @@ export class Formulario {
       avisop:[false, Validators.requiredTrue]
       
     });
+  }
+  ngAfterViewInit(): void {
+     $('#textarea1').characterCounter();
   }
 
   async guardarDatos() {

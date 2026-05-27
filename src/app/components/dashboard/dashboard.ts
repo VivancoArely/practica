@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CycleResults, DayResult, THRESHOLDS } from '../../models/cycle';
 
@@ -28,6 +28,8 @@ export class DashboardComponent implements OnChanges {
   @Input() results      !: CycleResults;
   @Input() diaSelected  !: Date;
   @Input() duracionCiclo!: number;
+
+  @Output() limpiar = new EventEmitter<void>();
 
   readonly DAY_NAMES_SHORT = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
   readonly BAR_H = 120;

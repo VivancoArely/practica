@@ -4,13 +4,13 @@
   padding: 24px 16px;
   min-height: 100vh;
 
-  --primary       : #f06292;
+  --primary       : #3a533c;
   --primary-light : #f8b4ce;
   --primary-dark  : #3a533c;
   --accent        : #f06292;
   --bg            : #b8c4b6;
   --surface       : #fff;
-  --text          : #212121;
+  --text          : #3a533c;
   --text-sec      : #757575;
   --disabled      : #e0e0e0;
   --disabled-text : #bdbdbd;
@@ -121,6 +121,11 @@ select:focus { border-color: var(--primary); }
   background: var(--disabled);
   color: var(--disabled-text);
   cursor: not-allowed;
+}
+
+app-footer {
+  display: block;
+  margin: 16px -16px -24px;
 }
 
 @media (max-width: 700px) {

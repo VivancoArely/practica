@@ -10,7 +10,7 @@
       (ngSubmit)="guardarDatos()"
     >
       <div class="input-field">
-        <i class="material-icons prefix red-text text-lighten-4 cafe">account_circle</i>
+        <i class="material-icons prefix  cafe">account_circle</i>
         <label for="nombre">Nombre</label>
         <input
           type="text"
@@ -46,9 +46,11 @@
         <textarea
           id="textarea1"
           class="materialize-textarea"
+          data-length="200"
           formControlName="comentarios"
+          
         ></textarea>
-        <label for="textarea1">Dejanos un comentario</label>
+        <label for="textarea1" >Dejanos un comentario</label>
       </div>
 
       <h6>¿ACEPTAS EL AVISO DE PRIVACIDAD?</h6>
@@ -78,19 +80,19 @@
       <ul class="contact-list">
         <li class="list-item">
           <i class="fa-solid fa-phone fa-xl" ></i>
-          <span class="contact-text place">(55) 44 96 25 67</span>
+          <span class="contact-text place"><a  href="https://wa.me/5544962567?text=Hola%20EcoCiclo" 
+   target="_blank">(55) 44 96 25 67</a></span>
         </li>
         <li class="list-item">
-          <i class="fa-solid fa-phone" ></i
-          ><span class="contact-text phone"
-            ><a href="tel:1-212-555-5555" title="Give me a call">(55) 22356083</a></span
+          <i class="fa-brands fa-whatsapp fa-xl" style="color: rgb(58, 83, 60); font-weight: bolder!important;"></i><span class="contact-text phone"
+            ><a href="tel:+525522356083" target="_blank"> (55) 22 35 60 83</a></span
           >
         </li>
 
         <li class="list-item">
           <i class="fa fa-envelope fa-2x"
             ><span class="contact-text gmail"
-              ><a href="mailto:#" title="Send me an email">ecociclo@gmail.com</a></span
+              ><a href='mailto:ecociclo@gmail.com?subject=Solicitud%20de%20información' target="_blank">ecociclo@gmail.com</a></span
             ></i
           >
         </li>
@@ -99,29 +101,22 @@
       <hr />
       <ul class="social-media-list">
         <li>
-          <a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i
-          ></a>
+          <a  href="https://www.facebook.com/profile.php?id=61590187209785" target="_blank" class="contact-icon">
+           <i class="fa-brands fa-facebook-f fa-xl" style="color: rgb(255, 255, 255);"></i></a>
         </li>
         <li>
-          <a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-codepen" aria-hidden="true"></i
-          ></a>
+          <a href="https://www.tiktok.com/@ecociclomx?is_from_webapp=1&sender_device=pc" target="_blank" class="contact-icon">
+            <i class="fa-brands fa-tiktok fa-xl" style="color: rgb(255, 255, 255);"></i></a>
         </li>
         <li>
-          <a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-twitter" aria-hidden="true"></i
-          ></a>
+          <a href="https://www.instagram.com/eco_ciclo.co/" target="_blank" class="contact-icon">
+            <i class="fa-brands fa-instagram fa-xl" style="color: rgb(255, 255, 255);"></i></a>
         </li>
-        <li>
-          <a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i
-          ></a>
-        </li>
+      
       </ul>
       <hr />
 
-      <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+      <div class="copyright" style="text-transform: uppercase;">Siguenos en redes sociales</div>
     </div>
   </div>
 </section>

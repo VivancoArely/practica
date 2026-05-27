@@ -53,6 +53,14 @@ export class CalculadoraComponent {
     this.showDashboard = false;
   }
 
+  onLimpiar(): void {
+    this.diaSelected   = null;
+    this.duracionCiclo = 1;
+    this.days          = Array.from({ length: 7 }, () => ({ flow: null, horas: '' }));
+    this.showDashboard = false;
+    this.results       = null;
+  }
+
   onSubmit(): void {
     if (!this.diaSelected || !this.allFilled) return;
     this.results       = this.cycleSvc.computeResults(this.diaSelected, this.duracionCiclo, this.days);
