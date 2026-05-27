@@ -1,22 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { CalculadoraComponent } from './calculadora';
 
-import { Calculadora } from './calculadora';
-
-describe('Calculadora', () => {
-  let component: Calculadora;
-  let fixture: ComponentFixture<Calculadora>;
-
+describe('CalculadoraComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Calculadora],
+      imports: [CalculadoraComponent],
     }).compileComponents();
-
-    fixture = TestBed.createComponent(Calculadora);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(CalculadoraComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it('should render title', async () => {
+    const fixture = TestBed.createComponent(CalculadoraComponent);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ecociclo');
   });
 });

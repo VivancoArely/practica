@@ -1,1 +1,58 @@
-<p>calculadora works</p>
+<h1>EcoCiclo</h1>
+
+<div class="app-card">
+
+  <!-- INPUT SECTION -->
+  <div class="input-section">
+
+    <!-- LEFT: calendar + duration -->
+    <div class="left-panel">
+
+      <div>
+        <div class="panel-title">Día de inicio</div>
+        <app-calendar
+          [diaSelected]="diaSelected"
+          [duracionCiclo]="duracionCiclo"
+          (dateSelected)="onDateSelected($event)">
+        </app-calendar>
+      </div>
+
+      <div>
+        <label class="field-label" for="duracion">Duración del ciclo (días)</label>
+        <select id="duracion"
+                [value]="duracionCiclo"
+                (change)="onDuracionChange($any($event.target).value)">
+          <option *ngFor="let d of durations" [value]="d">{{ d }}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: flow grid -->
+    <div class="right-panel">
+      <app-flow-grid
+        [duracionCiclo]="duracionCiclo"
+        [days]="days"
+        (dayUpdated)="onDayUpdated($event)">
+      </app-flow-grid>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-wrap">
+    <button class="btn-submit"
+            [disabled]="!allFilled"
+            (click)="onSubmit()">
+      Calcular mi ciclo →
+    </button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <app-dashboard
+    *ngIf="showDashboard && results"
+    [results]="results"
+    [diaSelected]="diaSelected!"
+    [duracionCiclo]="duracionCiclo">
+  </app-dashboard>
+
+</div>

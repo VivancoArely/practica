@@ -1,0 +1,126 @@
+:host {
+  --primary       : #f06292;
+  --primary-light : #f8b4ce;
+  --primary-dark  : #3a533c;
+  --accent        : #f06292;
+  --bg            : #b8c4b6;
+  --surface       : #fff;
+  --text          : #212121;
+  --text-sec      : #757575;
+  --disabled      : #e0e0e0;
+  --disabled-text : #bdbdbd;
+  --border        : #b8c4b6;
+  --low           : #64b5f6;
+  --low-a         : #1976d2;
+  --mid           : #ffb74d;
+  --mid-a         : #f57c00;
+  --high          : #e57373;
+  --high-a        : #c62828;
+  --green         : #3a533c;
+  --green-light   : #b8c4b6;
+  --shadow        : 0 2px 14px rgba(58, 83, 60, 0.14);
+  --radius        : 14px;
+}
+
+.grid-title {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.flow-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  font-size: .82rem;
+}
+
+.flow-table th {
+  background: var(--primary);
+  color: #fff;
+  padding: 9px 6px;
+  text-align: center;
+  font-weight: 700;
+  font-size: .78rem;
+}
+.flow-table th.sub {
+  background: var(--primary-light);
+  font-weight: 600;
+  font-size: .74rem;
+}
+
+.flow-table td {
+  padding: 6px 5px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.flow-table tr.disabled-row td {
+  background: #fafafa;
+  opacity: .45;
+  pointer-events: none;
+}
+.flow-table tr.enabled-row td { background: #fdf9f5; }
+
+.day-cell {
+  font-weight: 700;
+  color: var(--primary-dark);
+  width: 38px;
+}
+
+/* Flow buttons */
+.flow-btn {
+  border: 2px solid var(--disabled);
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: .75rem;
+  font-weight: 600;
+  transition: all .15s;
+  width: 100%;
+  min-width: 46px;
+  color: var(--disabled-text);
+}
+.flow-btn:disabled { cursor: not-allowed; opacity: .4; }
+
+.flow-btn.low-btn           { border-color: var(--low);    color: var(--low-a); }
+.flow-btn.low-btn.selected  { background: var(--low-a);    color: #fff; border-color: var(--low-a); }
+.flow-btn.mid-btn           { border-color: var(--mid);    color: var(--mid-a); }
+.flow-btn.mid-btn.selected  { background: var(--mid-a);    color: #fff; border-color: var(--mid-a); }
+.flow-btn.high-btn          { border-color: var(--high);   color: var(--high-a); }
+.flow-btn.high-btn.selected { background: var(--high-a);   color: #fff; border-color: var(--high-a); }
+
+/* Hours select inside table */
+.flow-table select {
+  font-size: .72rem;
+  padding: 5px 24px 5px 7px;
+  border-radius: 7px;
+  min-width: 80px;
+  width: 100%;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f06292' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 7px center;
+}
+.flow-table select:disabled {
+  background-color: var(--disabled);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .flow-table   { font-size: .72rem; }
+  .flow-btn     { padding: 4px 5px; min-width: 36px; font-size: .68rem; }
+  .flow-table select { min-width: 68px; }
+}

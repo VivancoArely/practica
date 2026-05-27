@@ -1,0 +1,112 @@
+<div class="dashboard">
+  <div class="dash-title">Dashboard EcoCiclo</div>
+
+  <!-- ── PLANNER ── -->
+  <div class="section-label">Planeador Semanal</div>
+  <div class="planner-grid">
+    <div *ngFor="let card of plannerCards"
+         class="planner-card"
+         [class.inactive]="!card.scenario">
+      <div class="planner-day-name">{{ card.dayName }}</div>
+      <div class="planner-date">{{ card.dateStr }}</div>
+
+      <ng-container [ngSwitch]="card.scenario">
+
+        <div *ngSwitchCase="'A'" class="planner-badge badge-green">
+          Gestión 100% con copa menstrual de forma segura
+        </div>
+
+        <div *ngSwitchCase="'B'" class="planner-badge badge-mix">
+          {{ card.result!.totalToallasDia }}
+          toalla{{ card.result!.totalToallasDia > 1 ? 's' : '' }} fuera de casa
+          + copa menstrual en casa
+        </div>
+
+        <div *ngSwitchDefault class="planner-badge" style="color:var(--disabled-text)">—</div>
+
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- ── ANALYTICS ── -->
+  <div class="analytics-row">
+
+    <!-- Bar chart -->
+    <div class="analytics-card">
+      <h4>UNIDADES (TOALLAS) DESPERDICDIAS VS AHORRADAS</h4>
+      <div class="chart-container">
+        <div class="y-axis-col">
+          <div class="y-axis" [style.height.px]="BAR_H">
+            <span>{{ maxVal }}</span>
+            <span>{{ halfVal }}</span>
+            <span>0</span>
+          </div>
+          <div class="y-axis-pad"></div>
+        </div>
+        <div class="bar-chart-wrap">
+          <div class="bar-chart" [style.height.px]="BAR_H + 24">
+            <div *ngFor="let g of barGroups" class="bar-group">
+              <div class="bars">
+                <div class="bar bar-teorico"
+                     [style.height.px]="g.teoricoH"
+                     [title]="'Teórico: ' + g.teorico">
+                </div>
+                <div class="bar bar-real"
+                     [style.height.px]="g.realH"
+                     [title]="'Real: ' + g.real">
+                </div>
+              </div>
+              <div class="bar-label">{{ g.label }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="legend-dot dot-teorico"></span>Toallas sin copa</span>
+        <span><span class="legend-dot dot-real"></span>Toallas con ciclo mixto</span>
+      </div>
+      <div class="bar-stats">
+        Desperidcio total de unidades sin ciclo mixto: <b>{{ results.desechoTotal }}</b> und. &nbsp;&nbsp;
+        <br>Unidades totales con ciclo mixto: <b>{{ results.totalToallasUsadas }}</b> und. &nbsp;&nbsp;
+       <br> Unidades ahorradas ahorradas: <b>{{ saved }}</b> und.
+      </div>
+    </div>
+
+    <!-- Rings -->
+    <div class="rings-col">
+
+      <!-- Ring 1: plástico ciclo -->
+      <div class="ring-card">
+        <svg class="ring-svg" width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="35" fill="none" stroke="#c8e6c9" stroke-width="10"/>
+          <circle cx="40" cy="40" r="35" fill="none" stroke="#43a047" stroke-width="10"
+            [attr.stroke-dasharray]="ringDash(p1Pct, 35) + ' ' + ringCirc(35)"
+            stroke-linecap="round"
+            transform="rotate(-90 40 40)"/>
+        </svg>
+        <div class="ring-info">
+          <h5>Plástico evitado este ciclo</h5>
+          <div class="ring-value">{{ results.plasticoEvitado | number:'1.3-3' }} kg</div>
+          <p>= {{ saved }} desechables que no llegaron al ecosistema.</p>
+        </div>
+      </div>
+
+      <!-- Ring 2: impacto anual -->
+      <div class="ring-card">
+        <svg class="ring-svg" width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="35" fill="none" stroke="#f3e5f5" stroke-width="10"/>
+          <circle cx="40" cy="40" r="35" fill="none" stroke="#c2185b" stroke-width="10"
+            [attr.stroke-dasharray]="ringDash(p2Pct, 35) + ' ' + ringCirc(35)"
+            stroke-linecap="round"
+            transform="rotate(-90 40 40)"/>
+        </svg>
+        <div class="ring-info">
+          <h5>Impacto proyectado anual</h5>
+          <div class="ring-value">{{ results.plasticoAnual | number:'1.3-3' }} kg/año</div>
+          <p>Si mantienes este hábito los 13 ciclos del año.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

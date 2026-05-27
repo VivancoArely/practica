@@ -1,0 +1,32 @@
+<div class="calendar-wrap">
+
+  <!-- Header -->
+  <div class="cal-header">
+    <button class="cal-nav" (click)="prevMonth()">&#8249;</button>
+    <span>{{ MONTH_NAMES[viewMonth] }} {{ viewYear }}</span>
+    <button class="cal-nav" (click)="nextMonth()">&#8250;</button>
+  </div>
+
+  <!-- Day names -->
+  <div class="cal-grid">
+    <div class="cal-day-name" *ngFor="let n of DAY_NAMES">{{ n }}</div>
+
+    <!-- Days -->
+    <div
+      *ngFor="let day of calDays"
+      class="cal-day"
+      [class.empty]="!day.date"
+      [class.disabled]="day.isPast"
+      [class.today]="day.isToday && !day.isInCycle"
+      [class.in-cycle]="day.isInCycle"
+      [class.cycle-start]="day.isStart"
+      [class.cycle-end]="day.isEnd"
+      (click)="selectDay(day)">
+      {{ day.label }}
+    </div>
+  </div>
+
+  <!-- Selected range label -->
+  <div class="selected-date-label">{{ formattedSelected }}</div>
+
+</div>

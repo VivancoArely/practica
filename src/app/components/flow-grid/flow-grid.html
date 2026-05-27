@@ -1,0 +1,70 @@
+<div class="grid-title">Nivel de flujo y horas</div>
+
+<table class="flow-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Día</th>
+      <th colspan="3">Nivel de Flujo</th>
+      <th rowspan="2">Horas fuera<br>de casa</th>
+    </tr>
+    <tr>
+      <th class="sub">Bajo</th>
+      <th class="sub">Medio</th>
+      <th class="sub">Alto</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let i of rows"
+        [class.enabled-row]="isEnabled(i)"
+        [class.disabled-row]="!isEnabled(i)">
+
+      <td class="day-cell">D{{ i + 1 }}</td>
+
+      <!-- Bajo -->
+      <td>
+        <button
+          class="flow-btn low-btn"
+          [class.selected]="days[i].flow === 'bajo'"
+          [disabled]="!isEnabled(i)"
+          (click)="selectFlow(i, 'bajo')">
+          Bajo
+        </button>
+      </td>
+
+      <!-- Medio -->
+      <td>
+        <button
+          class="flow-btn mid-btn"
+          [class.selected]="days[i].flow === 'medio'"
+          [disabled]="!isEnabled(i)"
+          (click)="selectFlow(i, 'medio')">
+          Medio
+        </button>
+      </td>
+
+      <!-- Alto -->
+      <td>
+        <button
+          class="flow-btn high-btn"
+          [class.selected]="days[i].flow === 'alto'"
+          [disabled]="!isEnabled(i)"
+          (click)="selectFlow(i, 'alto')">
+          Alto
+        </button>
+      </td>
+
+      <!-- Horas -->
+      <td>
+        <select
+          [disabled]="!isEnabled(i)"
+          [value]="days[i].horas"
+          (change)="selectHoras(i, $any($event.target).value)">
+          <option value="">—</option>
+          <option *ngFor="let h of HOURS_OPTS" [value]="h">{{ h }}</option>
+        </select>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,115 @@
+:host {
+  --primary       : #f06292;
+  --primary-light : #f8b4ce;
+  --primary-dark  : #3a533c;
+  --accent        : #f06292;
+  --bg            : #b8c4b6;
+  --surface       : #fff;
+  --text          : #212121;
+  --text-sec      : #757575;
+  --disabled      : #e0e0e0;
+  --disabled-text : #bdbdbd;
+  --border        : #b8c4b6;
+  --low           : #64b5f6;
+  --low-a         : #1976d2;
+  --mid           : #ffb74d;
+  --mid-a         : #f57c00;
+  --high          : #e57373;
+  --high-a        : #c62828;
+  --green         : #3a533c;
+  --green-light   : #b8c4b6;
+  --shadow        : 0 2px 14px rgba(58, 83, 60, 0.14);
+  --radius        : 14px;
+}
+
+.calendar-wrap {
+  background: #f8f6f1;
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cal-header span {
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: .95rem;
+}
+
+.cal-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 1.2rem;
+  padding: 2px 7px;
+  border-radius: 6px;
+  transition: background .15s;
+}
+.cal-nav:hover { background: var(--border); }
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-day-name {
+  text-align: center;
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 2px 0 5px;
+}
+
+.cal-day {
+  text-align: center;
+  padding: 5px 2px;
+  border-radius: 8px;
+  font-size: .82rem;
+  cursor: pointer;
+  transition: background .12s, color .12s;
+  user-select: none;
+  min-height: 26px;
+}
+
+.cal-day:hover:not(.disabled):not(.empty):not(.in-cycle) {
+  background: var(--primary-light);
+  color: #fff;
+}
+
+.cal-day.today    { font-weight: 700; color: var(--primary); }
+.cal-day.disabled { color: var(--disabled-text); cursor: not-allowed; }
+.cal-day.empty    { cursor: default; }
+
+.cal-day.in-cycle {
+  background: var(--primary-light);
+  color: #fff;
+  border-radius: 0;
+}
+.cal-day.in-cycle.cycle-start {
+  background: var(--primary);
+  border-radius: 50% 0 0 50%;
+  font-weight: 700;
+}
+.cal-day.in-cycle.cycle-end {
+  border-radius: 0 50% 50% 0;
+}
+.cal-day.in-cycle.cycle-start.cycle-end {
+  border-radius: 50%;
+}
+
+.selected-date-label {
+  margin-top: 8px;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--primary-dark);
+  min-height: 18px;
+  font-weight: 600;
+}   
