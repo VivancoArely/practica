@@ -57,6 +57,7 @@
       <!-- Horas -->
       <td>
         <select
+          class="browser-default"
           [disabled]="!isEnabled(i)"
           [value]="days[i].horas"
           (change)="selectHoras(i, $any($event.target).value)">

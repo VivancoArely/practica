@@ -20,6 +20,7 @@
       <div>
         <label class="field-label" for="duracion">Duración del ciclo (días)</label>
         <select id="duracion"
+                class="browser-default"
                 [value]="duracionCiclo"
                 (change)="onDuracionChange($any($event.target).value)">
           <option *ngFor="let d of durations" [value]="d">{{ d }}</option>
