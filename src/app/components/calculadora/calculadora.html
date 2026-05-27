@@ -18,7 +18,7 @@
       </div>
 
       <div>
-        <label class="field-label" for="duracion">Duración del ciclo (días)</label>
+        <label class="field-label" for="duracion" style="text-transform: uppercase;">Duración del ciclo (días)</label>
         <select id="duracion"
                 class="browser-default"
                 [value]="duracionCiclo"
@@ -44,7 +44,7 @@
     <button class="btn-submit"
             [disabled]="!allFilled"
             (click)="onSubmit()">
-      Calcular mi ciclo →
+      CALCULAR MI CICLO
     </button>
   </div>
 
@@ -55,5 +55,7 @@
     [diaSelected]="diaSelected!"
     [duracionCiclo]="duracionCiclo">
   </app-dashboard>
+ 
 
 </div>
+ <app-footer></app-footer>

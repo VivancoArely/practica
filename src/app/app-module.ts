@@ -10,14 +10,14 @@ import { Lista } from './components/lista/lista';
 import { Iecologico } from './components/iecologico/iecologico';
 
 import { Cards } from './components/cards/cards';
-import { Footer } from './components/footer/footer';
 import { Nosotros } from './components/nosotros/nosotros';
 import { Mision } from './components/mision/mision';
 import { Historia } from './components/historia/historia';
+import { Footer } from './components/footer/footer';
 
 @NgModule({
-  declarations: [App, Nav, Lista, Iecologico, Cards, Footer, Nosotros, Mision, Historia],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, Nav, Lista, Iecologico, Cards, Nosotros, Mision, Historia,],
+  imports: [BrowserModule, AppRoutingModule, Formulario, Footer],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

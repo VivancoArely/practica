@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../../../firebaseConfig';
+import { Footer } from '../footer/footer';
 
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, Footer],
   templateUrl: './formulario.html',
   styleUrl: './formulario.scss',
 })

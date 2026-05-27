@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarComponent }  from '../calendar/calendar';
 import { FlowGridComponent }  from '../flow-grid/flow-grid';
+import { Footer }             from '../footer/footer';
 
 import { DashboardComponent } from '../dashboard/dashboard';
 import { CycleService }       from '../../services/cycle';
@@ -10,7 +11,7 @@ import { DayEntry, CycleResults, HOURS_OPTS } from '../../models/cycle';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, CalendarComponent, FlowGridComponent, DashboardComponent],
+  imports: [CommonModule, CalendarComponent, FlowGridComponent, DashboardComponent, Footer],
  templateUrl: './calculadora.html',
   styleUrls: ['./calculadora.css']
 })
