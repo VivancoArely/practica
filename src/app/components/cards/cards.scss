@@ -1,6 +1,46 @@
 .card{
     border-radius: 50px;
+    background-color: #f8f6f1!important;
 }
-img{
-    border-radius: 50px;
+.card-image{
+    overflow: hidden;
+    border-radius: 50px 50px 0 0;
+}
+.card-image img{
+    border-radius: 50px 50px 0 0;
+}
+.card-content{
+    font-family: "DM Sans", sans-serif;
+    color: #3a533c;
+    text-transform: uppercase;
+    font-weight: 900!important;
+}
+.card-title{
+     font-family: "DM Sans", sans-serif;
+    color: #3a533c;
+    text-transform: uppercase;
+}
+
+.card-reveal p{
+    font-family: "DM Sans", sans-serif;
+    color: #3a533c;
+    font-size: 1.3rem;
+
+}
+h1{
+	font-family: 'DM Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #3a533c;
+	font-size: 3.0rem;
+}
+
+b{
+	color: #f06292;
+}
+
+h3{
+	font-size: 1.5rem;
+	font-family: 'DM Sans', sans-serif;
+
 }

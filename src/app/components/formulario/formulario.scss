@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #355738;
+
   padding-bottom: 100px;
   font-family: "DM Sans", sans-serif;
 }
@@ -9,13 +9,15 @@ body {
 #contact {
   width: 100%;
   height: 100%;
+  background-color: white !important;
 }
 
 .section-header {
   text-align: center;
   margin: 0 auto;
-  padding: 40px 0;
+  font-size: 2.5rem;
  font-family: "DM Sans", sans-serif;
+ margin-top: 5px;
   color:#355738 ;
   text-transform: uppercase;
   letter-spacing: 6px;
@@ -254,4 +256,6 @@ hr {
 
 
 
-
+span{
+  color: #f06292;
+}
