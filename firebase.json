@@ -6,7 +6,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/practica",
+   "public": "dist/practica/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

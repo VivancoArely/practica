@@ -52,6 +52,7 @@ export class Formulario implements AfterViewInit {
       alert('Tus datos han sido guardados correctamente, pronto nos pondremos en contacto contigo');
 
       this.formulario.reset();
+      $('.validate').removeClass('valid invalid');
 
     } catch (error) {
       console.error("Error al guardar el formulario: ", error);
